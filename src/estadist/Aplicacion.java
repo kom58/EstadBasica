@@ -1,6 +1,8 @@
 package estadist;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Aplicacion {
     private JPanel panPrincipal;
@@ -29,6 +31,7 @@ public class Aplicacion {
         btnGuardar.addActionListener(e -> numGuardar());
         btnSiguiente.addActionListener(e -> numSiguiente());
         btnAnterior.addActionListener(e -> numAnterior());
+        txtNumero.addActionListener(e -> numGuardar());
     }
 
     public void VisualizaArray() {
@@ -82,6 +85,7 @@ public class Aplicacion {
         } else {
             txtErrores.setText("¡¡Error!!");
         }
+        numSiguiente();
     }
 
     public void numSiguiente(){
@@ -133,12 +137,13 @@ public class Aplicacion {
     public void MuestraEstadisticas() {
         // Datos estadísticos ....
         DatosEstad datestd = new DatosEstad();
+        String laDesv = String.format("Desv  : %.2f",datestd.getDesviacion());
 
         datMedia.setText("Media : " + datestd.getMedia());
         datMaximo.setText("Máximo : " + datestd.getMaximo());
         datMinimo.setText("Mínimo : " + datestd.getMinimo());
         datMediana.setText("Mediana : " + datestd.getMediana());
-        datDesviacion.setText("Desv: " + datestd.getDesviacion());
+        datDesviacion.setText(laDesv);
 
     }
 
