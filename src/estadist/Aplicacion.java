@@ -34,9 +34,13 @@ public class Aplicacion {
     public void VisualizaArray() {
 
         int h;
+        String strH, strH2;
+
         tarArray.setText("");                       // Visualiza números del Array ----
         for (h = 0; h <= 9; h = h + 1) {
-            tarArray.append(" " + (h + 1) + ". Num[" + h + "]  " + numListaX[h] + "\n");
+            strH = String.format(" %2d.Num[", h+1);
+            strH2 = String.format("] %4d \n",numListaX[h]);
+            tarArray.append(strH + h  + strH2);
         }
     }
 
