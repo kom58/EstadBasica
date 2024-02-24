@@ -1,18 +1,9 @@
 package estadist;
 
-
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import java.util.Arrays;
-
 
 public class Aplicacion {
     private JPanel panPrincipal;
-    private JPanel panSuperior;
-    private JPanel panMedio;
-    private JPanel panInferior;
     private JButton btnReiniciar;
     private JButton btnSalir;
     private JTextArea tarArray;
@@ -20,9 +11,6 @@ public class Aplicacion {
     private JButton btnGuardar;
     private JButton btnAnterior;
     private JButton btnSiguiente;
-    private JLabel titTitulo;
-    private JLabel titIndice;
-    private JLabel titNum;
     private JLabel datMaximo;
     private JLabel datMinimo;
     private JLabel datMedia;
@@ -30,46 +18,17 @@ public class Aplicacion {
     private JLabel datDesviacion;
     private JLabel txtIndice;
     private JLabel txtErrores;
-    public static int[] numListaX = new int[10];            // Array +++
+    public static int[] numListaX = new int[10];            // Array
     public int iX;                                          // Indice del array (txtIndice - 1)
 
 
     public Aplicacion() {
         
-        btnSalir.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                System.exit(0);
-            }
-        });
-
-        btnReiniciar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                numReiniciar();
-            }
-        });
-
-        btnGuardar.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                numGuardar();
-            }
-        });
-
-        btnSiguiente.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                numSiguiente();
-            }
-        });
-
-        btnAnterior.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-
-                numAnterior();
-            }
-        });
+        btnSalir.addActionListener(e -> System.exit(0));
+        btnReiniciar.addActionListener(e -> numReiniciar());
+        btnGuardar.addActionListener(e -> numGuardar());
+        btnSiguiente.addActionListener(e -> numSiguiente());
+        btnAnterior.addActionListener(e -> numAnterior());
     }
 
     public void VisualizaArray() {
@@ -123,17 +82,17 @@ public class Aplicacion {
 
     public void numSiguiente(){
 
-        int n, i;
+        int  i;
         Comprobar cpb = new Comprobar();
         String is = txtIndice.getText();
         String tn = txtNumero.getText();
 
         if (cpb.esEntero(tn)) {
             i = Integer.parseInt(is);
-            n = Integer.parseInt(tn);
+            //n = Integer.parseInt(tn);
 
             i = i + 1;
-            n = n + 1;
+            //n = n + 1;
 
             if (i <= 10) {
 
@@ -146,17 +105,17 @@ public class Aplicacion {
 
     public void numAnterior(){
 
-        int n, i;
+        int  i;
         Comprobar cpb = new Comprobar();
         String is = txtIndice.getText();
         String tn = txtNumero.getText();
 
         if (cpb.esEntero(tn)) {
             i = Integer.parseInt(is);
-            n = Integer.parseInt(tn);
+            //n = Integer.parseInt(tn);
 
             i = i - 1;
-            n = n - 1;
+            //n = n - 1;
 
             if (i >= 1) {
 
