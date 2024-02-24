@@ -1,8 +1,6 @@
 package estadist;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Aplicacion {
     private JPanel panPrincipal;
